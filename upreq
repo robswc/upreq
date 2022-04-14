@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# create temp requirements for diff
+cp requirements.txt .temp-requirements.txt
+pip freeze > requirements.txt
+
+# get diff
+DIFF=`diff requirements.txt .temp-requirements.txt | grep "<"`
+echo "$DIFF"
+
+# remove temp file
+rm .temp-requirements.txt
+
+# add to git
+git add requirements.txt
