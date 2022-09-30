@@ -10,6 +10,13 @@ import (
 )
 
 func GetReqs(path string) []string {
+
+	// check that the file exists
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		fmt.Println("No current requirements file found.")
+		return nil
+	}
+
 	// open the file
 	file, err := os.Open(path)
 
@@ -42,6 +49,12 @@ func GetReqs(path string) []string {
 }
 
 func WipeFile(path string) {
+
+	// check that the file exists
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		return
+	}
+
 	err := os.Truncate(path, 0)
 	if err != nil {
 		fmt.Println(err)
@@ -49,6 +62,15 @@ func WipeFile(path string) {
 }
 
 func WriteReqs(path string, reqs []string) []string {
+
+	// check that the file exists, if not create it
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		_, err := os.Create(path)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
 	// open the file
 	file, err := os.OpenFile(path, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 
