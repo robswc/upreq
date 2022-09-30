@@ -1,2 +1,14 @@
+![upreq-logo(1)](https://user-images.githubusercontent.com/38849824/193359986-a5d2c43b-8e45-4456-8305-b9041388578f.png)
 
-![upreq-logo](https://user-images.githubusercontent.com/38849824/193356646-1e22f948-50f2-402c-b9a3-a17affe12d60.png)
+### Why? Because...
+```python
+len(pip freeze > requirements.txt) > len(upreq)
+```
+
+![GitHub file size in bytes](https://img.shields.io/github/size/robswc/upreq?style=for-the-badge)
+[![DigitalOcean Referral Badge](https://img.shields.io/badge/follow-@robswc-blue?style=for-the-badge&logo=twitter)](https://twitter.com/robswc)
+
+
+
+# Upreq
+
