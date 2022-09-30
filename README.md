@@ -25,14 +25,14 @@ It started as a bash script, after I found myself typing `pip freeze > etc` one 
 
 ## Installation
 
-Since Upreq is a binary executable, you can download the latest release from the [releases page]() and copy it to your `PATH`.
-Below are examples of how to do this on Linux, macOS, and Windows.
+Since Upreq is a binary executable, you can download the latest release from the [releases page](https://github.com/robswc/upreq/releases) and copy it to your `PATH`.
+Below is an example of how to do this on linux.
 
 ### Linux
 ```bash
-curl -s https://api.github.com/repos/robswc/upreq/releases/latest | grep "browser_download_url.*upreq_linux_amd64" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-chmod +x upreq_linux_amd64
-sudo mv upreq_linux_amd64 /usr/local/bin/upreq
+curl -s https://api.github.com/repos/robswc/upreq/releases/latest | grep "browser_download_url.*upreq-linux" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+chmod +x upreq-linux
+sudo mv upreq-linux /usr/local/bin/upreq
 ```
 
 
