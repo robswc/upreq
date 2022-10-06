@@ -9,11 +9,13 @@ import (
 	"strings"
 )
 
-func GetReqs(path string) []string {
+func GetReqs(path string, strip bool) []string {
 
 	// check that the file exists
 	if _, err := os.Stat(path); os.IsNotExist(err) {
-		fmt.Println("No current requirements file found.")
+		if !strip {
+			fmt.Println("No current requirements file found.")
+		}
 		return nil
 	}
 
@@ -61,7 +63,7 @@ func WipeFile(path string) {
 	}
 }
 
-func WriteReqs(path string, reqs []string) []string {
+func WriteReqs(path string, reqs []string, strip bool) []string {
 
 	// check that the file exists, if not create it
 	if _, err := os.Stat(path); os.IsNotExist(err) {
@@ -94,7 +96,7 @@ func WriteReqs(path string, reqs []string) []string {
 			log.Fatal(err)
 		}
 	}
-	return GetReqs(path)
+	return GetReqs(path, strip)
 }
 
 func DiffCheck(oldReqs []string, newReqs []string) []string {
@@ -136,4 +138,14 @@ func GetEnvReqs() []string {
 	}
 	reqs := strings.Fields(string(out))
 	return reqs
+}
+
+func GitAdd(path string, strip bool) {
+	add := exec.Command("git", "add", path)
+	err := add.Run()
+	if err != nil {
+		if !strip {
+			fmt.Println(err)
+		}
+	}
 }
