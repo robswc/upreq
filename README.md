@@ -6,7 +6,8 @@ len(pip freeze > requirements.txt) > len(upreq)
 ```
 
 ![GitHub file size in bytes](https://img.shields.io/github/size/robswc/upreq?style=for-the-badge)
-[![DigitalOcean Referral Badge](https://img.shields.io/badge/follow-@robswc-blue?style=for-the-badge&logo=twitter)](https://twitter.com/robswc)
+[![twitter](https://img.shields.io/badge/follow-@robswc-blue?style=for-the-badge&logo=twitter)](https://twitter.com/robswc)
+![downloads](https://img.shields.io/github/downloads/robswc/upreq/total?style=for-the-badge)
 
 
 # Upreq
