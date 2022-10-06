@@ -9,7 +9,6 @@ len(pip freeze > requirements.txt) > len(upreq)
 [![DigitalOcean Referral Badge](https://img.shields.io/badge/follow-@robswc-blue?style=for-the-badge&logo=twitter)](https://twitter.com/robswc)
 
 
-
 # Upreq
 
 Upreq is a simple CLI tool that provides shortcuts and feedback for updating your Python project's `requirements.txt` file.
@@ -26,7 +25,7 @@ It started as a bash script, after I found myself typing `pip freeze > etc` one 
 ## Installation
 
 Since Upreq is a binary executable, you can download the latest release from the [releases page](https://github.com/robswc/upreq/releases) and copy it to your `PATH`.
-Below is an example of how to do this on linux.
+Below is an example of how to do this on each major OS.
 
 ### Linux
 ```bash
