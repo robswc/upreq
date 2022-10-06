@@ -42,7 +42,7 @@ For more information, visit: https://github.com/robswc/upreq
 		// write new requirements
 		var writtenReqs = upreq.WriteReqs(file, newReqs, strip)
 		if !strip {
-			fmt.Printf("Wrote (%[1]s) new requirements to %[2]s\n", fmt.Sprint(len(writtenReqs)), file)
+			fmt.Printf("Wrote (%[1]s) requirements to %[2]s\n", fmt.Sprint(len(writtenReqs)), file)
 		}
 
 		// add the file to git

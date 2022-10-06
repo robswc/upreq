@@ -35,6 +35,25 @@ chmod +x upreq-linux
 sudo mv upreq-linux /usr/local/bin/upreq
 ```
 
+### MacOs
+```bash
+curl -s https://api.github.com/repos/robswc/upreq/releases/latest | grep "browser_download_url.*upreq-darwin" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+chmod +x upreq-darwin
+sudo mv upreq-darwin /usr/local/bin/upreq
+```
+
+### Windows (powershell)
+```powershell
+Invoke-WebRequest -Uri
+"
+https://api.github.com/repos/robswc/upreq/releases/latest
+" | Select-Object -ExpandProperty content | ConvertFrom-Json | Select-Object -ExpandProperty assets | Select-Object -ExpandProperty browser_download_url | Select-String -Pattern "upreq-windows" | Invoke-WebRequest -OutFile upreq-windows.exe
+mkdir "C:\Program Files\upreq"
+mv .\upreq-windows.exe "C:\Program Files\upreq\upreq.exe"
+$env:Path += ";C:\Program Files\upreq"
+```
+
+
 
 ## Usage
 
